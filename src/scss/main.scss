@@ -1,0 +1,8 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключение компонентов страницы
+@import "./components/header";
+@import "./components/form";

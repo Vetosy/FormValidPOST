@@ -1,0 +1,216 @@
+<section class="pizza-lunch">
+  <!--start section-->
+  <div class="pizza-lunch__container container">
+    <h1 class="pizza-lunch__title">MAKE OFFICE PIZZA LUNCHES A THING, WITH UNO!</h1>
+    <div class="pizza-lunch__content">
+      <p class="pizza-lunch__text">If you order it, they will come…back to the office. If you are looking to bring
+        employees back to the office, pizza is the answer. Everyone loves pizza and Uno Pizzeria and Grill…it’s a
+        Win, Win!</p>
+      <p class="pizza-lunch__info">I’m interested in learning more about Pizza Lunches from UNO Pizzeria and Grill!
+        Have someone contact me.</p>
+    </div>
+
+    <form class="pizza-lunch__form" id="pizza-lunch__form" method="POST" action="#">
+      <!--start form-->
+      <div class="pizza-lunch__row">
+        <label class="pizza-lunch__label" for="pizza-lunch-name">
+          <span class="pizza-lunch__caption pizza-lunch__caption--name">Name</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-name" type="text" name="name" aria-required="true"
+            aria-label="Enter your name" required>
+        </label>
+      </div>
+      <div class="pizza-lunch__row pizza-lunch__row--flex">
+        <label class="pizza-lunch__label" for="pizza-lunch-email">
+          <span class="pizza-lunch__caption pizza-lunch__caption--email">Email</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-email" type="email" name="email" aria-required="true"
+            aria-label="Enter your email" required>
+        </label>
+        <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-tel">
+          <span class="pizza-lunch__caption pizza-lunch__caption--phone">Phone</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-tel" type="tel" name="phone" aria-required="true"
+            aria-label="Enter your phone" required>
+        </label>
+      </div>
+      <div class="pizza-lunch__row">
+        <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-company-name">
+          <span class="pizza-lunch__caption pizza-lunch__caption--companyname">Company Name</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-company-name" type="text" name="companyName"
+            aria-required="true" aria-label="Enter your company name" required>
+        </label>
+      </div>
+      <div class="pizza-lunch__row">
+        <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-company-address">
+          <span class="pizza-lunch__caption pizza-lunch__caption--address">Company Address</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-company-address" type="text" name="companyAddress"
+            aria-required="true" aria-label="Enter your company address" required>
+        </label>
+      </div>
+      <div class="pizza-lunch__row pizza-lunch__row--flex">
+        <label class="pizza-lunch__label" for="pizza-lunch-city">
+          <span class="pizza-lunch__caption pizza-lunch__caption--city">City</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-city" type="text" name="city" aria-required="true"
+            aria-label="Enter your city" required>
+        </label>
+        <label class="pizza-lunch__label pizza-lunch__label--small" for="pizza-lunch-state">
+          <span class="pizza-lunch__caption pizza-lunch__caption--state">State</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-state" type="text" name="state" aria-required="true"
+            aria-label="Enter your state" required>
+        </label>
+        <label class="pizza-lunch__label pizza-lunch__label--small" for="pizza-lunch-zip">
+          <span class="pizza-lunch__caption pizza-lunch__caption--zip">Zip Code</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-zip" type="number" name="zipCode" aria-required="true"
+            aria-label="Enter your zip code" required>
+        </label>
+      </div>
+      <div class="pizza-lunch__row">
+        <label class="pizza-lunch__label pizza-lunch__label--middle" for="pizza-lunch-employees">
+          <span class="pizza-lunch__caption pizza-lunch__caption--employees"># of Employees on Site</span>
+          <input class="pizza-lunch__input" id="pizza-lunch-employees" type="number" name="employees"
+            aria-required="true" aria-label="Enter your of Employees on Site" required>
+        </label>
+      </div>
+      <button class="pizza-lunch__btn" type="submit" aria-label="submit">SUBMIT</button>
+    </form>
+    <!--end form-->
+
+    <div class="pizza-lunch__success">
+      <!--start success-popup-->
+      <div class="pizza-lunch__success-content">
+        <h2 class="pizza-lunch__success-title">Success!</h2>
+        <p class="pizza-lunch__success-text">The form has been successfully submitted. Thank you!</p>
+        <button class="pizza-lunch__success-btn" aria-label="close">Close</button>
+      </div>
+    </div>
+    <!--end success-popup-->
+
+  </div>
+</section>
+<!--end section-->
+<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+<script src="https://unpkg.com/imask"></script>
+<script type="text/javascript">
+  const validationPizzaLunch = new JustValidate('#pizza-lunch__form');
+  const telInputPizzaLunch = document.getElementById('pizza-lunch-tel');
+  const telMaskPizzaLunch = IMask(telInputPizzaLunch, {
+    mask: '(000) 000-0000',
+  });
+
+  const zipInputPizzaLunch = document.getElementById('pizza-lunch-zip');
+  zipInputPizzaLunch.addEventListener('input', function () {
+    const value = zipInputPizzaLunch.value.replace(/\D/g, '');
+
+    if (value.length > 5) {
+      zipInputPizzaLunch.value = value.slice(0, 5);
+    } else {
+      zipInputPizzaLunch.value = value;
+    }
+  });
+
+  function showMessage(title, text) {
+    const successPizzaLunch = document.querySelector('.pizza-lunch__success');
+    if (successPizzaLunch) {
+      const successTitlePizzaLunch = successPizzaLunch.querySelector('.pizza-lunch__success-title');
+      const successTextPizzaLunch = successPizzaLunch.querySelector('.pizza-lunch__success-text');
+      const closeButtonPizzaLunch = successPizzaLunch.querySelector('.pizza-lunch__success-btn');
+
+      successTitlePizzaLunch.textContent = title;
+      successTextPizzaLunch.textContent = text;
+
+      successPizzaLunch.style.opacity = '1';
+      successPizzaLunch.style.visibility = 'visible';
+
+      if (closeButtonPizzaLunch) {
+        closeButtonPizzaLunch.addEventListener('click', () => {
+          successPizzaLunch.style.opacity = '0';
+          successPizzaLunch.style.visibility = 'hidden';
+        });
+      }
+    }
+  }
+
+  function showSuccessMessage(event) {
+    const formEntries = new FormData(event.target).entries();
+    const json = Object.assign(...Array.from(formEntries, ([x, y]) => ({
+      [x]: y
+    })));
+
+    fetch('https://my-json-server.typicode.com/Vetosy/testserver/comments', {
+        method: 'POST',
+        body: JSON.stringify(json),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        showMessage('Success!', 'The form has been successfully submitted. Thank you!');
+        event.target.reset();
+      })
+      .catch(error => {
+        showMessage('Error', 'An error occurred. Please try again later.');
+        event.target.reset();
+        console.error(error);
+      });
+  }
+
+  validationPizzaLunch.onSuccess(showSuccessMessage)
+
+  validationPizzaLunch
+    .addField('#pizza-lunch-name', [{
+        rule: 'required',
+        errorMessage: 'Fill in the input field',
+      },
+      {
+        rule: 'minLength',
+        value: 2,
+      }
+    ])
+    .addField('#pizza-lunch-email', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }, {
+      rule: 'email'
+    }])
+    .addField('#pizza-lunch-tel', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }, {
+      rule: 'minLength',
+      value: 14,
+      errorMessage: 'Invalid phone number'
+    }])
+    .addField('#pizza-lunch-company-name', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }])
+    .addField('#pizza-lunch-company-address', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }])
+    .addField('#pizza-lunch-city', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }])
+    .addField('#pizza-lunch-state', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }])
+    .addField('#pizza-lunch-zip', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }, {
+      rule: 'minLength',
+      value: 5,
+      errorMessage: 'Invalid Zip Code',
+    }])
+    .addField('#pizza-lunch-employees', [{
+      rule: 'required',
+      errorMessage: 'Fill in the input field',
+    }])
+
+</script>
