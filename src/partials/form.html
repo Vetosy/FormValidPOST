@@ -1,5 +1,5 @@
+<!--start section-->
 <section class="pizza-lunch">
-  <!--start section-->
   <div class="pizza-lunch__container container">
     <h1 class="pizza-lunch__title">MAKE OFFICE PIZZA LUNCHES A THING, WITH UNO!</h1>
     <div class="pizza-lunch__content">
@@ -9,73 +9,77 @@
       <p class="pizza-lunch__info">I’m interested in learning more about Pizza Lunches from UNO Pizzeria and Grill!
         Have someone contact me.</p>
     </div>
-
+    <!--start form-->
     <form class="pizza-lunch__form" id="pizza-lunch__form" method="POST" action="#">
-      <!--start form-->
-      <div class="pizza-lunch__row">
-        <label class="pizza-lunch__label" for="pizza-lunch-name">
-          <span class="pizza-lunch__caption pizza-lunch__caption--name">Name</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-name" type="text" name="name" aria-required="true"
-            aria-label="Enter your name" required autocomplete="name" title="Please enter your full name">
-        </label>
-      </div>
-      <div class="pizza-lunch__row pizza-lunch__row--flex">
-        <label class="pizza-lunch__label" for="pizza-lunch-email">
-          <span class="pizza-lunch__caption pizza-lunch__caption--email">Email</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-email" type="email" name="email" aria-required="true"
-            aria-label="Enter your email" required autocomplete="email" title="Please enter your email address">
-        </label>
-        <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-tel">
-          <span class="pizza-lunch__caption pizza-lunch__caption--phone">Phone</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-tel" type="tel" name="phone" aria-required="true"
-            aria-label="Enter your phone" required autocomplete="tel" title="Please enter phone number">
-        </label>
-      </div>
-      <div class="pizza-lunch__row">
-        <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-company-name">
-          <span class="pizza-lunch__caption pizza-lunch__caption--companyname">Company Name</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-company-name" type="text" name="companyName"
-            aria-required="true" aria-label="Enter your company name" required autocomplete="organization"
-            title="Please enter your company name">
-        </label>
-      </div>
-      <div class="pizza-lunch__row">
-        <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-company-address">
-          <span class="pizza-lunch__caption pizza-lunch__caption--address">Company Address</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-company-address" type="text" name="companyAddress"
-            aria-required="true" aria-label="Enter your company address" required autocomplete="address-line1"
-            title="Please enter your company address">
-        </label>
-      </div>
-      <div class="pizza-lunch__row pizza-lunch__row--flex">
-        <label class="pizza-lunch__label" for="pizza-lunch-city">
-          <span class="pizza-lunch__caption pizza-lunch__caption--city">City</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-city" type="text" name="city" aria-required="true"
-            aria-label="Enter your city" required autocomplete="address-line2" title="Please enter your city">
-        </label>
-        <label class="pizza-lunch__label pizza-lunch__label--small" for="pizza-lunch-state">
-          <span class="pizza-lunch__caption pizza-lunch__caption--state">State</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-state" type="text" name="state" aria-required="true"
-            aria-label="Enter your state" required autocomplete="address-level1" title="Please enter your state">
-        </label>
-        <label class="pizza-lunch__label pizza-lunch__label--small" for="pizza-lunch-zip">
-          <span class="pizza-lunch__caption pizza-lunch__caption--zip">Zip Code</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-zip" type="number" name="zipCode" aria-required="true"
-            aria-label="Enter your zip code" required autocomplete="postal-code" title="Please enter your zip code">
-        </label>
-      </div>
-      <div class="pizza-lunch__row">
-        <label class="pizza-lunch__label pizza-lunch__label--middle" for="pizza-lunch-employees">
-          <span class="pizza-lunch__caption pizza-lunch__caption--employees"># of Employees on Site</span>
-          <input class="pizza-lunch__input" id="pizza-lunch-employees" type="number" name="employees"
-            aria-required="true" aria-label="Enter your of Employees on Site" required autocomplete="off"
-            title="Please enter the number of employees on site">
-        </label>
-      </div>
+      <fieldset class="pizza-lunch__person-info" form="pizza-lunch__form">
+        <legend class="pizaa-lunch__person-legend visually-hidden">Personal Information</legend>
+        <div class="pizza-lunch__row">
+          <label class="pizza-lunch__label" for="pizza-lunch-name">
+            <span class="pizza-lunch__caption pizza-lunch__caption--name">Name</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-name" type="text" name="name" aria-required="true"
+              aria-label="Enter your name" required autocomplete="name" title="Please enter your full name">
+          </label>
+        </div>
+        <div class="pizza-lunch__row pizza-lunch__row--flex">
+          <label class="pizza-lunch__label" for="pizza-lunch-email">
+            <span class="pizza-lunch__caption pizza-lunch__caption--email">Email</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-email" type="email" name="email" aria-required="true"
+              aria-label="Enter your email" required autocomplete="email" title="Please enter your email address">
+          </label>
+          <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-tel">
+            <span class="pizza-lunch__caption pizza-lunch__caption--phone">Phone</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-tel" type="tel" name="phone" aria-required="true"
+              aria-label="Enter your phone" required autocomplete="tel" title="Please enter phone number">
+          </label>
+        </div>
+      </fieldset>
+      <fieldset class="pizza-lunch__company-info" form="pizza-lunch__form">
+        <legend class="pizza-lunch__company-legend visually-hidden">Company Information</legend>
+        <div class="pizza-lunch__row">
+          <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-company-name">
+            <span class="pizza-lunch__caption pizza-lunch__caption--companyname">Company Name</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-company-name" type="text" name="companyName"
+              aria-required="true" aria-label="Enter your company name" required autocomplete="organization"
+              title="Please enter your company name">
+          </label>
+        </div>
+        <div class="pizza-lunch__row">
+          <label class="pizza-lunch__label pizza-lunch__label--big" for="pizza-lunch-company-address">
+            <span class="pizza-lunch__caption pizza-lunch__caption--address">Company Address</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-company-address" type="text" name="companyAddress"
+              aria-required="true" aria-label="Enter your company address" required autocomplete="address-line1"
+              title="Please enter your company address">
+          </label>
+        </div>
+        <div class="pizza-lunch__row pizza-lunch__row--flex">
+          <label class="pizza-lunch__label" for="pizza-lunch-city">
+            <span class="pizza-lunch__caption pizza-lunch__caption--city">City</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-city" type="text" name="city" aria-required="true"
+              aria-label="Enter your city" required autocomplete="address-line2" title="Please enter your city">
+          </label>
+          <label class="pizza-lunch__label pizza-lunch__label--small" for="pizza-lunch-state">
+            <span class="pizza-lunch__caption pizza-lunch__caption--state">State</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-state" type="text" name="state" aria-required="true"
+              aria-label="Enter your state" required autocomplete="address-level1" title="Please enter your state">
+          </label>
+          <label class="pizza-lunch__label pizza-lunch__label--small" for="pizza-lunch-zip">
+            <span class="pizza-lunch__caption pizza-lunch__caption--zip">Zip Code</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-zip" type="number" name="zipCode" aria-required="true"
+              aria-label="Enter your zip code" required autocomplete="postal-code" title="Please enter your zip code">
+          </label>
+        </div>
+        <div class="pizza-lunch__row">
+          <label class="pizza-lunch__label pizza-lunch__label--middle" for="pizza-lunch-employees">
+            <span class="pizza-lunch__caption pizza-lunch__caption--employees"># of Employees on Site</span>
+            <input class="pizza-lunch__input" id="pizza-lunch-employees" type="number" name="employees"
+              aria-required="true" aria-label="Enter your of Employees on Site" required autocomplete="off"
+              title="Please enter the number of employees on site">
+          </label>
+        </div>
+      </fieldset>
       <button class="pizza-lunch__btn" type="submit" form="pizza-lunch__form">SUBMIT</button>
     </form>
     <!--end form-->
-
     <div class="pizza-lunch__success">
       <!--start success-popup-->
       <div class="pizza-lunch__success-content">
@@ -85,10 +89,10 @@
       </div>
     </div>
     <!--end success-popup-->
-
   </div>
 </section>
 <!--end section-->
+
 <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script type="text/javascript">
